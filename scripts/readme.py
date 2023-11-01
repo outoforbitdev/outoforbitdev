@@ -13,15 +13,15 @@ def populate_repos():
         { "name": "action-semantic-release", "type": "Action", "dependabot": ":white_check_mark:" },
         { "name": "action-docker-publish", "type": "Action", "dependabot": ":white_check_mark:" },
         { "name": "action-npm-publish", "type": "Action", "dependabot": ":x:" },
-        { "name": "docker-node", "type": "Action", "dependabot": ":white_check_mark:" },
-        { "name": "docker-dotnet-aspnet", "type": "Action", "dependabot": ":x:" },
-        { "name": "docker-dotnet-reactapp", "type": "Action", "dependabot": ":x:" },
-        { "name": "docker-dotnet-sdk", "type": "Action", "dependabot": ":x:" },
-        { "name": "canary-dotnet-reactapp", "type": "Action", "dependabot": ":white_check_mark:" },
-        { "name": "oodts", "type": "Action", "dependabot": ":x:" },
-        { "name": "oodreactts", "type": "Action", "dependabot": ":x:" },
-        { "name": "oodgraphics", "type": "Action", "dependabot": ":x:" },
-        { "name": "oodreacttemplate", "type": "Action", "dependabot": ":x:" }
+        { "name": "docker-node", "type": "Docker", "dependabot": ":white_check_mark:" },
+        { "name": "docker-dotnet-aspnet", "type": "Docker", "dependabot": ":x:" },
+        { "name": "docker-dotnet-reactapp", "type": "Docker", "dependabot": ":x:" },
+        { "name": "docker-dotnet-sdk", "type": "Docker", "dependabot": ":x:" },
+        { "name": "canary-dotnet-reactapp", "type": "Canary", "dependabot": ":white_check_mark:" },
+        { "name": "oodts", "type": "Library", "dependabot": ":x:" },
+        { "name": "oodreactts", "type": "Library", "dependabot": ":x:" },
+        { "name": "oodgraphics", "type": "Library", "dependabot": ":x:" },
+        { "name": "oodreacttemplate", "type": "Template", "dependabot": ":x:" }
     ]
 
 def write_repo_header(readme):
