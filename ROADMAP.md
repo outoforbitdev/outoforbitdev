@@ -2,8 +2,9 @@
 
 * :white_check_mark: action-semantic-release
     * :white_check_mark: Finish MVP
-* :black_square_button: action-docker-test
-    * :black_square_button: Create MVP
+* :white_check_mark: action-docker-test
+    * :white_check_mark: Create MVP
+    * :black_square_button: Release version 1 with action-npm-release
 * :black_square_button: action-docker-publish
     * :black_square_button: Finish MVP
         * :black_square_button: Add dry-run
