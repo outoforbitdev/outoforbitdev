@@ -34,14 +34,26 @@ def write_repo_line(repo, readme):
     line = "| " + repo["type"] \
     + " | [" + repo["name"] + "](https://github.com/outoforbitdev/" + repo["name"] \
     + ") | " + repo["dependabot"] + " " \
-    + "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/releases/latest'><img alt='Latest release' src='https://img.shields.io/github/v/release/outoforbitdev/" + repo["name"] + "?logo=github&label=%20'></a> " \
-    + "| <a href='https://securityscorecards.dev/viewer/?uri=github.com/outoforbitdev/" + repo["name"] + "'><img alt='OpenSSF Scorecard' src='https://api.securityscorecards.dev/projects/github.com/outoforbitdev/" + repo["name"] + "/badge'></a> " \
-    + "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions'><img alt='Release states' src='https://github.com/outoforbitdev/" + repo["name"] + "/workflows/Release/badge.svg'></a> " \
-    + "<br><a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions?query=workflow%3ATest+branch%3Amaster'><img alt='Test states' src='https://github.com/outoforbitdev/" + repo["name"] + "/workflows/Test/badge.svg'></a> " \
-    + "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/issues'><img alt='Open issues' src='https://img.shields.io/github/issues/outoforbitdev/" + repo["name"] + "?logo=github&label=Issues'></a> " \
-    + "<br><a href='https://github.com/outoforbitdev/" + repo["name"] + "/pulls'><img alt='Open PRs' src='https://img.shields.io/github/issues-pr/outoforbitdev/" + repo["name"] + "?logo=github&label=PRs'></a> |" \
+    + version(repo) \
+    + scorecard(repo) \
+    + pipelines(repo) \
+    + issues(repo) \
     + "\n"
     readme.write(line)
+
+def version(repo):
+    return "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/releases/latest'><img alt='Latest release' src='https://img.shields.io/github/v/release/outoforbitdev/" + repo["name"] + "?logo=github&label=%20'></a> " \
+
+def scorecard(repo):
+    return "| <a href='https://securityscorecards.dev/viewer/?uri=github.com/outoforbitdev/" + repo["name"] + "'><img alt='OpenSSF Scorecard' src='https://api.securityscorecards.dev/projects/github.com/outoforbitdev/" + repo["name"] + "/badge'></a> " \
+
+def pipelines(repo):
+    return "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions/workflows/test.yml'><img alt='Test states' src='https://img.shields.io/github/actions/workflow/status/outoforbitdev/" + repo["name"] + "/test.yml?label=Test'></a>" \
+    + "<br><a href='https://github.com/outoforbitdev/" + repo["name"] + "/actions/workflows/release.yml'><img alt='Release states' src='https://img.shields.io/github/actions/workflow/status/outoforbitdev/" + repo["name"] + "/release.yml?label=Release'></a>"
+
+def issues(repo):
+    return "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/issues'><img alt='Open issues' src='https://img.shields.io/github/issues/outoforbitdev/" + repo["name"] + "?logo=github&label=Issues'></a> " \
+    + "<br><a href='https://github.com/outoforbitdev/" + repo["name"] + "/pulls'><img alt='Open PRs' src='https://img.shields.io/github/issues-pr/outoforbitdev/" + repo["name"] + "?logo=github&label=PRs'></a> |"
 
 if __name__ == "__main__":
     generate_readme()
