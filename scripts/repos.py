@@ -1,8 +1,7 @@
 def generate_readme():
     repos = populate_repos()
-    readme = open(r"../README.md", "w")
-    readme.write("### Hi there 👋\n\n")
-    readme.write("### Repository Guide\n")
+    readme = open(r"../REPOSITORIES.md", "w")
+    readme.write("# Repository Guide\n")
     write_repo_header(readme)
     for r in repos:
         write_repo_line(r, readme)
