@@ -21,7 +21,8 @@ def populate_repos():
         { "name": "oodts", "type": "Library", "dependabot": ":x:" },
         { "name": "oodreactts", "type": "Library", "dependabot": ":x:" },
         { "name": "oodgraphics", "type": "Library", "dependabot": ":x:" },
-        { "name": "oodreacttemplate", "type": "Template", "dependabot": ":x:" }
+        { "name": "oodreacttemplate", "type": "Template", "dependabot": ":x:" },
+        { "name": "outoforbitdev", "type": "Documentation", "dependabot": ":x:" }
     ]
 
 def write_repo_header(readme):
