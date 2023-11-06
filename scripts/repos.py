@@ -13,6 +13,7 @@ def populate_repos():
         { "name": "action-docker-publish", "type": "Action", "dependabot": ":white_check_mark:" },
         { "name": "action-npm-publish", "type": "Action", "dependabot": ":x:" },
         { "name": "action-docker-test", "type": "Action", "dependabot": ":white_check_mark:" },
+        { "name": "action-label-manager", "type": "Action", "dependabot": ":x:" },
         { "name": "docker-node", "type": "Docker", "dependabot": ":white_check_mark:" },
         { "name": "docker-dotnet-aspnet", "type": "Docker", "dependabot": ":x:" },
         { "name": "docker-dotnet-reactapp", "type": "Docker", "dependabot": ":x:" },
