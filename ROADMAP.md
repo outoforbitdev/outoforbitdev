@@ -5,11 +5,11 @@
 * :white_check_mark: action-docker-test
     * :white_check_mark: Create MVP
     * :black_square_button: Release version 1 with action-npm-release
-* :black_square_button: action-docker-publish
-    * :black_square_button: Finish MVP
-        * :black_square_button: Add dry-run
-        * :black_square_button: Use pre-built docker image
-        * :black_square_button: Publish /latest tag
+* :white_check_mark: action-docker-publish
+    * :white_check_mark: Finish MVP
+        * :white_check_mark: Add dry-run
+        * :x: Use pre-built docker image
+        * :white_check_mark: Publish /latest tag
 * :black_square_button: action-npm-release
     * :black_square_button: Create MVP
 * :black_square_button: oodts
