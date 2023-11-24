@@ -9,22 +9,24 @@ def generate_readme():
 
 def populate_repos():
     return [
-        { "name": "action-semantic-release", "type": "Action", "dependabot": ":white_check_mark:" },
-        { "name": "action-docker-publish", "type": "Action", "dependabot": ":white_check_mark:" },
-        { "name": "action-npm-publish", "type": "Action", "dependabot": ":x:" },
-        { "name": "action-docker-test", "type": "Action", "dependabot": ":white_check_mark:" },
-        { "name": "action-label-manager", "type": "Action", "dependabot": ":x:" },
-        { "name": "docker-node", "type": "Docker", "dependabot": ":white_check_mark:" },
-        { "name": "docker-dotnet-aspnet", "type": "Docker", "dependabot": ":x:" },
-        { "name": "docker-dotnet-reactapp", "type": "Docker", "dependabot": ":x:" },
-        { "name": "docker-dotnet-sdk", "type": "Docker", "dependabot": ":x:" },
-        { "name": "canary-dotnet-reactapp", "type": "Canary", "dependabot": ":white_check_mark:" },
-        { "name": "oodts", "type": "Library", "dependabot": ":x:" },
-        { "name": "oodreactts", "type": "Library", "dependabot": ":x:" },
-        { "name": "oodgraphics", "type": "Library", "dependabot": ":x:" },
-        { "name": "oodreacttemplate", "type": "Template", "dependabot": ":x:" },
-        { "name": "outoforbitdev", "type": "Documentation", "dependabot": ":x:" }
+        { "name": "action-semantic-release", "type": "Action", "dependabot": True },
+        { "name": "action-docker-publish", "type": "Action", "dependabot": True },
+        { "name": "action-npm-publish", "type": "Action", "dependabot": False },
+        { "name": "action-docker-test", "type": "Action", "dependabot": True },
+        { "name": "action-label-manager", "type": "Action", "dependabot": False },
+        { "name": "docker-base", "type": "Docker", "dependabot": True },
+        { "name": "docker-dotnet-reactapp", "type": "Docker", "dependabot": False },
+        { "name": "canary-dotnet-reactapp", "type": "Canary", "dependabot": True },
+        { "name": "oodts", "type": "Library", "dependabot": False },
+        { "name": "oodreactts", "type": "Library", "dependabot": False },
+        { "name": "oodgraphics", "type": "Library", "dependabot": False },
+        { "name": "oodreacttemplate", "type": "Template", "dependabot": False },
+        { "name": "outoforbitdev", "type": "Documentation", "dependabot": False }
     ]
+
+def top_repos():
+    top = ["action-semantic-release", "action-docker-publish", "docker-base", "canary-dotnet-reactapp"]
+    return [repo for repo in populate_repos() if repo["name"] in top]
 
 def write_repo_header(readme):
     header    = "| Type | Repository | Dependabot | Version | Scorecard | Pipelines | Issues |\n"
@@ -35,13 +37,19 @@ def write_repo_header(readme):
 def write_repo_line(repo, readme):
     line = "| " + repo["type"] \
     + " | [" + repo["name"] + "](https://github.com/outoforbitdev/" + repo["name"] \
-    + ") | " + repo["dependabot"] + " " \
+    + ") " + dependabot(repo) \
     + version(repo) \
     + scorecard(repo) \
     + pipelines(repo) \
     + issues(repo) \
     + "\n"
     readme.write(line)
+
+def dependabot(repo):
+    emoji = ":x:"
+    if repo["dependabot"]:
+        emoji = ":white_check_mark:"
+    return "| " + emoji + " "
 
 def version(repo):
     return "| <a href='https://github.com/outoforbitdev/" + repo["name"] + "/releases/latest'><img alt='Latest release' src='https://img.shields.io/github/v/release/outoforbitdev/" + repo["name"] + "?logo=github&label=%20'></a> " \
