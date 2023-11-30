@@ -1,6 +1,7 @@
 import subprocess
 from repos import populate_repos
 
+# export GITHUB_ACCESS_TOKEN=
 def main():
     repos = populate_repos()
     for r in repos:

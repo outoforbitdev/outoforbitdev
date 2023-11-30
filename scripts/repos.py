@@ -21,7 +21,8 @@ def populate_repos():
         { "name": "oodreactts", "type": "Library", "dependabot": False },
         { "name": "oodgraphics", "type": "Library", "dependabot": False },
         { "name": "oodreacttemplate", "type": "Template", "dependabot": False },
-        { "name": "outoforbitdev", "type": "Documentation", "dependabot": False }
+        { "name": "outoforbitdev", "type": "Documentation", "dependabot": False },
+        { "name": "polylint", "type": "Linter", "dependabot": True }
     ]
 
 def top_repos():
