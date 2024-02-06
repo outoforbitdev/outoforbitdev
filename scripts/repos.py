@@ -9,20 +9,81 @@ def generate_readme():
 
 def populate_repos():
     return [
-        { "name": "action-semantic-release", "type": "Action", "dependabot": True },
-        { "name": "action-docker-publish", "type": "Action", "dependabot": True },
-        { "name": "action-npm-publish", "type": "Action", "dependabot": False },
-        { "name": "action-docker-test", "type": "Action", "dependabot": True },
-        { "name": "action-label-manager", "type": "Action", "dependabot": False },
-        { "name": "docker-base", "type": "Docker", "dependabot": True },
-        { "name": "docker-dotnet-reactapp", "type": "Docker", "dependabot": False },
-        { "name": "canary-dotnet-reactapp", "type": "Canary", "dependabot": True },
-        { "name": "oodts", "type": "Library", "dependabot": False },
-        { "name": "oodreactts", "type": "Library", "dependabot": False },
-        { "name": "oodgraphics", "type": "Library", "dependabot": False },
-        { "name": "oodreacttemplate", "type": "Template", "dependabot": False },
-        { "name": "outoforbitdev", "type": "Documentation", "dependabot": False },
-        { "name": "polylint", "type": "Linter", "dependabot": True }
+        {
+            "name": "action-semantic-release",
+            "type": "Action",
+            "dependabot": True
+        },
+        {
+            "name": "action-docker-publish",
+            "type": "Action",
+            "dependabot": True
+        },
+        {
+            "name": "action-npm-publish",
+            "type": "Action",
+            "dependabot": False
+        },
+        {
+            "name": "action-docker-test",
+            "type": "Action",
+            "dependabot": True
+        },
+        {
+            "name": "action-label-manager",
+            "type": "Action",
+            "dependabot": False
+        },
+        {
+            "name": "docker-base",
+            "type": "Docker",
+            "dependabot": True
+        },
+        {
+            "name": "docker-dotnet-reactapp",
+            "type": "Docker",
+            "dependabot": False
+        },
+        {
+            "name": "canary-dotnet-reactapp",
+            "type": "Canary",
+            "dependabot": True
+        },
+        {
+            "name": "oodts",
+            "type": "Library",
+            "dependabot": False
+        },
+        {
+            "name": "oodreactts",
+            "type": "Library",
+            "dependabot": False
+        },
+        {
+            "name": "oodgraphics",
+            "type": "Library",
+            "dependabot": False
+        },
+        {
+            "name": "oodreacttemplate",
+            "type": "Template",
+            "dependabot": False
+        },
+        {
+            "name": "outoforbitdev",
+            "type": "Documentation",
+            "dependabot": False
+        },
+        {
+            "name": "polylint",
+            "type": "Linter",
+            "dependabot": True
+        },
+        {
+            "name": "app-account",
+            "type": "Application",
+            "dependabot": False
+        }
     ]
 
 def top_repos():

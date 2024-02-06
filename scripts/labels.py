@@ -1,11 +1,14 @@
 import subprocess
 from repos import populate_repos
 
-# export GITHUB_ACCESS_TOKEN=
 def main():
     repos = populate_repos()
+    confirmation = input("Do you want to update labels on all repos? ('y' to confirm): ").lower()
+    if confirmation not in ["y", "yes", "yeah", "ye"]:
+        return
+    token = input("Enter Github access token: ")
     for r in repos:
-        cmd_str = "npx github-label-sync -l labels.json outoforbitdev/" + r["name"]
+        cmd_str = "npx github-label-sync -a " + token + " -l labels.json outoforbitdev/" + r["name"]
         cmd_list = cmd_str.split(" ")
         print(cmd_list)
         subprocess.run(cmd_list)
